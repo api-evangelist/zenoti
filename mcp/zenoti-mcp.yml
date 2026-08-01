@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: Derived from Zenoti API operation groups at https://docs.zenoti.com/llms.txt
+note: >-
+  No official hosted/remote Zenoti MCP server was found. This is a CANDIDATE
+  tool surface derived from the ~283 documented REST operations, grouped by
+  resource, to illustrate what an MCP server over the Zenoti API could expose.
+server:
+  official: false
+  url: null
+auth: API-key or bearer access token (see authentication/zenoti-authentication.yml)
+candidate_tools:
+- group: centers
+  tools: [list_centers, retrieve_center, list_center_services, list_center_employees, list_center_therapists, list_center_rooms, list_center_categories, center_attendance]
+- group: appointments
+  tools: [list_appointments, create_booking, reserve_slot, confirm_booking, reschedule_service_booking, cancel_service_booking]
+- group: guests
+  tools: [list_guests, retrieve_guest, create_guest, update_guest, list_guest_notes, guest_loyalty_points]
+- group: invoices_payments
+  tools: [generate_invoice, collect_invoice_payment, close_invoice, verify_gift_card_balance, redeem_gift_card]
+- group: memberships
+  tools: [select_membership, cancel_guest_membership, change_auto_renewal]
+- group: packages
+  tools: [list_guest_series_packages, redeem_series_package]
+- group: gift_cards
+  tools: [select_gift_card_template, send_gift_card_email]
+- group: classes
+  tools: [register_to_class, cancel_class_registration, check_in_to_class, cancel_class_session]
+- group: opportunities
+  tools: [create_opportunity, retrieve_opportunity, list_opportunities, edit_opportunity, add_opportunity_notes]
+- group: employees
+  tools: [add_employee, update_employee, retrieve_employee_schedules, create_employee_blockout]

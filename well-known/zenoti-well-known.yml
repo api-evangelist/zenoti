@@ -1,0 +1,24 @@
+generated: '2026-07-21'
+method: probed
+source: live probes of Zenoti hosts (/.well-known/*)
+probes:
+- host: www.zenoti.com
+  path: /.well-known/security.txt
+  status: 200
+  file: zenoti-security.txt
+- host: docs.zenoti.com
+  path: /.well-known/security.txt
+  status: 404
+  file: null
+- host: docs.zenoti.com
+  path: /.well-known/openid-configuration
+  status: 404
+  file: null
+- host: api.zenoti.com
+  path: /.well-known/openid-configuration
+  status: 401
+  file: null
+notes: >-
+  Only the corporate host publishes a security.txt. Zenoti API auth is
+  API-key / opaque-bearer-token based (not OpenID Connect), so no
+  openid-configuration or oauth-authorization-server document is exposed.

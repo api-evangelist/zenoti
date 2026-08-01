@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.zenoti.com/llms.txt
+versioning:
+  scheme: uri-path
+  current: v1
+  policy_url: null
+  notes: API is versioned via the /v1/ path segment. No dated version policy published.
+deprecation:
+  policy_url: null
+  sunset_header: null
+  deprecation_header: null
+  notes: No formal deprecation / Sunset (RFC 8594) policy documented.
+status_page:
+  url: https://status.zenoti.com/
+  status: 200
+sla:
+  url: null
+  notes: SLA negotiated per contract; not publicly documented.
+support:
+  url: https://docs.zenoti.com/docs/support.md
+  help_center: https://help.zenoti.com
+  account_manager: Higher rate-limit tiers and support via Zenoti account manager
+changelog:
+  url: https://docs.zenoti.com/changelog

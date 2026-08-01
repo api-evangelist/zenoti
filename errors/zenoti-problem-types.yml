@@ -1,0 +1,38 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.zenoti.com/docs/response-and-error-codes.md
+docs:
+- https://docs.zenoti.com/docs/response-and-error-codes.md
+- https://docs.zenoti.com/docs/pagination.md
+- https://docs.zenoti.com/docs/api-rate-limits-1.md
+format: custom-json
+envelope: >-
+  Responses are JSON. On error the payload carries an "error" key holding a
+  {code, message} object; on success "error" is null. Standard HTTP status
+  codes accompany every response (2xx success, 4xx client error, 5xx server
+  error). This is NOT RFC 9457 application/problem+json.
+envelope_example: |-
+  {
+    "code": 422,
+    "message": "You cannot request more than 100 items."
+  }
+problem_types:
+- status: 200
+  title: OK
+  meaning: Successful response; error key is null.
+- status: 422
+  title: Unprocessable Entity
+  meaning: Pagination size exceeds the maximum of 100 records per page.
+  remediation: Request 100 or fewer items per page (size query param, max 100).
+- status: 429
+  title: Too Many Requests
+  meaning: Rate limit exceeded (default 60 calls per minute per organization).
+  remediation: >-
+    Honor the Retry-After header, back off, then retry; cache and queue
+    requests to stay under the limit.
+- status: '4XX'
+  title: Client Error
+  meaning: The request from the client was invalid.
+- status: '5XX'
+  title: Server Error
+  meaning: An error occurred on Zenoti API servers.

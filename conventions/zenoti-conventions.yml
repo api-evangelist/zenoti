@@ -1,0 +1,57 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.zenoti.com/llms.txt
+docs:
+- https://docs.zenoti.com/docs/authentication.md
+- https://docs.zenoti.com/docs/pagination.md
+- https://docs.zenoti.com/docs/api-rate-limits-1.md
+- https://docs.zenoti.com/docs/response-and-error-codes.md
+auth:
+  styles:
+  - apiKey header ('Authorization: apikey {key}')
+  - bearer token ('Authorization: bearer {token}')
+  see: authentication/zenoti-authentication.yml
+versioning:
+  style: uri-path
+  current: v1
+  example: '{api_url}/v1/centers/{center_id}/products'
+idempotency:
+  supported: false
+  notes: No idempotency-key header or retry-safe write semantics documented.
+pagination:
+  style: page-number
+  request_params:
+  - name: page
+    default: 1
+  - name: size
+    default: 10
+    min: 1
+    max: 100
+  response_field: page_info
+  response_shape: '{ "page_info": { "total": <n>, "page": <n>, "size": <n> } }'
+  over_limit_error: 422 "You cannot request more than 100 items."
+rate_limiting:
+  default_limit: 60 requests per 60 seconds per organization
+  headers:
+  - Organization-RateLimit-Limit
+  - RateLimit-Remaining
+  - RateLimit-Reset
+  bucket: Token-bucket refill of 60 calls/60s, max accumulation 60 (b=60)
+  over_limit_status: 429
+  backoff_header: Retry-After
+  higher_tiers: Available as add-ons via Zenoti account manager
+error_envelope:
+  format: custom-json
+  shape: '{ "error": { "code": <int>, "message": <string> } } (error null on success)'
+  see: errors/zenoti-problem-types.yml
+webhooks:
+  supported: true
+  signature: HTTP header signature for verification/validation
+  see: asyncapi/zenoti-webhooks.yml
+request_tracing:
+  documented: false
+cross_links:
+  authentication: authentication/zenoti-authentication.yml
+  errors: errors/zenoti-problem-types.yml
+  lifecycle: lifecycle/zenoti-lifecycle.yml
+  webhooks: asyncapi/zenoti-webhooks.yml

@@ -1,0 +1,58 @@
+generated: '2026-07-21'
+method: searched
+type: Webhooks
+source: https://docs.zenoti.com/docs/overview-1.md
+docs:
+- https://docs.zenoti.com/docs/webhooks-event-response-structure.md
+- https://docs.zenoti.com/docs/webhook-failure-handling.md
+- https://docs.zenoti.com/reference/webhook-events.md
+transport: HTTPS POST to subscriber destination URL
+envelope:
+  headers: HTTP header carries a signature for verification/validation
+  body_schema:
+    id: Identifies the webhook call
+    event_id: Identifies the event type
+    event_schema: Object schema version of the resource (e.g. v1)
+    event_resource: Resource name (e.g. Guest, Invoice)
+    event_type: Event type name (e.g. Invoice.Closed)
+    event_timestamp: ISO-8601 time the event was triggered
+    data: Response object of the corresponding event
+  example: |-
+    {
+      "id": "622b5b33a961750e01db6512",
+      "event_id": "622b5b33a961750e01db6510",
+      "event_schema": "v1",
+      "event_resource": "Invoice",
+      "event_type": "Invoice.Closed",
+      "event_timestamp": "2022-03-11T14:22:43.3847049Z",
+      "data": {}
+    }
+delivery:
+  timeout: Each request queued 10 seconds awaiting a response
+  retry: Up to 5 retries with exponential backoff
+  retry_delay_min: 30 seconds
+  retry_delay_max: 10 minutes
+  auto_deactivation: >-
+    After 20 consecutive failures the webhook is deactivated, an error log is
+    generated, and a failure-notification email is sent.
+events:
+- resource: Invoice
+  types: [Invoice.Closed]
+- resource: Guest
+  types: [Guest.Created, Guest.Updated, Guest.OptedIn, Guest.OptedOut]
+- resource: GuestMembership
+  types: [GuestMembership.Created, GuestMembership.Cancelled]
+- resource: GuestPass
+  types: [GuestPass.Redeemed]
+- resource: GuestPackage
+  types: [GuestPackage events]
+- resource: ClassesSchedule
+  types: [Schedule.Created, Schedule.Updated, Schedule.Cancelled]
+- resource: ClassesBooking
+  types: [Booking.Created, Booking.Cancelled]
+- resource: Appointment
+  types: [Appointment.Feedback (Feedback v1/v2 Started)]
+- resource: AppointmentGroup
+  types: [AppointmentGroup.Created]
+- resource: Employee
+  types: [Employee.Created, Employee.Updated]

@@ -1,0 +1,38 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.zenoti.com/docs/authentication.md
+docs: https://docs.zenoti.com/docs/authentication.md
+summary: >-
+  Zenoti API supports two authentication types: API-key based (global master
+  data, no expiry, server-side) and access-token (bearer) based (module /
+  role-scoped, expiring, client-side). Both are supplied in the Authorization
+  request header.
+schemes:
+- id: apiKey
+  type: apiKey
+  in: header
+  name: Authorization
+  format: 'apikey {api_key}'
+  scope: Global master data; no API restrictions
+  expiry: Does not expire (rotate/revoke manually)
+  recommended_for: Server-side integrations
+- id: bearerToken
+  type: http
+  scheme: bearer
+  in: header
+  name: Authorization
+  format: 'bearer {access_token}'
+  scope: Module- or role-based data, restricted by app user role
+  recommended_for: Client-side / per-user (guest, therapist) interactions
+  token_lifetime: Access token valid 24 hours
+  refresh:
+    refresh_token_lifetime: 90 days (single use)
+    behavior: >-
+      Refreshing deactivates existing access tokens and issues a new one.
+    endpoints:
+    - Generate an access token
+    - Refresh an access token
+    - Revoke an existing access token
+  invalidation: >-
+    Employee access tokens expire when the employee password changes or the
+    employee leaves the organization.

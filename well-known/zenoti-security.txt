@@ -1,0 +1,4 @@
+Contact: mailto:security@zenoti.com
+Expires: 2027-02-25T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://www.zenoti.com/.well-known/security.txt

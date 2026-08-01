@@ -1,7 +1,16 @@
 aid: zenoti
 name: Zenoti
-description: 'Zenoti is a company surfaced as a portfolio company of accel and added to the API Evangelist
-  network as a stub for enrichment. Sector: services. This profile is a lead awaiting the enrichment pipeline.'
+description: >-
+  Zenoti is an AI-powered, all-in-one cloud management platform for the beauty,
+  wellness, and fitness industries, serving 30,000+ salons, spas, medspas,
+  barbershops, and fitness centers across 50+ countries. It covers online
+  booking, point of sale and payments, memberships, packages, gift cards,
+  loyalty, marketing, staff scheduling, and business intelligence. Zenoti
+  exposes a large REST API (~283 documented operations) with API-key and
+  bearer-token authentication, signed webhooks, page-number pagination, and
+  per-organization rate limiting, letting partners build custom booking,
+  membership-sale, product-sale, gift-card, and CRM/opportunity workflows on
+  top of the platform.
 url: https://raw.githubusercontent.com/api-evangelist/zenoti/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,18 +18,126 @@ x-backed-by:
 - accel
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://www.zenoti.com/favicon.ico
 tags:
 - Company
 - Services
-apis: []
+- Beauty
+- Wellness
+- Spa
+- Salon
+- Fitness
+- Booking
+- Payments
+- SaaS
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: Zenoti API
+  description: >-
+    REST API for the Zenoti beauty/wellness/fitness platform covering centers,
+    appointments, guests, invoices and payments, memberships, packages, gift
+    cards, classes, opportunities, employees, and webhooks.
+  humanURL: https://docs.zenoti.com/
+  baseURL: https://api.zenoti.com
+  tags:
+  - Booking
+  - Payments
+  - Wellness
+  properties:
+  - type: Documentation
+    url: https://docs.zenoti.com/
+  - type: APIReference
+    url: https://docs.zenoti.com/reference/generate-an-access-token
+  - type: GettingStarted
+    url: https://docs.zenoti.com/docs/create-the-backend-app-and-generate-a-new-api-key.md
+  - type: Authentication
+    url: authentication/zenoti-authentication.yml
+  - type: Conventions
+    url: conventions/zenoti-conventions.yml
+  - type: ErrorCatalog
+    url: errors/zenoti-problem-types.yml
+  - type: Webhooks
+    url: asyncapi/zenoti-webhooks.yml
+  - type: Conformance
+    url: conformance/zenoti-conformance.yml
+  - type: MCPServer
+    url: mcp/zenoti-mcp.yml
+  - type: LLMsTxt
+    url: llms/zenoti-llms.txt
+  - type: ChangeLog
+    url: https://docs.zenoti.com/changelog
 common:
 - type: Website
   url: http://www.zenoti.com
+- type: DeveloperPortal
+  url: https://docs.zenoti.com/
+- type: Documentation
+  url: https://docs.zenoti.com/
+- type: APIReference
+  url: https://docs.zenoti.com/reference/generate-an-access-token
+- type: GettingStarted
+  url: https://docs.zenoti.com/docs/create-the-backend-app-and-generate-a-new-api-key.md
+- type: Support
+  url: https://help.zenoti.com
+- type: Blog
+  url: https://www.zenoti.com/blog
+- type: Pricing
+  url: https://www.zenoti.com/pricing-zenoti
+- type: SignUp
+  url: https://www.zenoti.com/book-a-demo
+- type: StatusPage
+  url: https://status.zenoti.com/
+- type: Lifecycle
+  url: lifecycle/zenoti-lifecycle.yml
+- type: Authentication
+  url: authentication/zenoti-authentication.yml
+- type: Conventions
+  url: conventions/zenoti-conventions.yml
+- type: ErrorCatalog
+  url: errors/zenoti-problem-types.yml
+- type: Webhooks
+  url: asyncapi/zenoti-webhooks.yml
+- type: Conformance
+  url: conformance/zenoti-conformance.yml
+- type: Compliance
+  url: security/zenoti-trust-center.yml
+- type: MCPServer
+  url: mcp/zenoti-mcp.yml
+- type: LLMsTxt
+  url: llms/zenoti-llms.txt
+- type: WellKnown
+  url: well-known/zenoti-well-known.yml
+- type: SecurityTxt
+  url: well-known/zenoti-security.txt
+- type: DomainSecurity
+  url: security/zenoti-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/zenoti-vulnerability-disclosure.yml
+- type: Security
+  url: security/zenoti-vulnerability-disclosure.yml
+- type: TrustCenter
+  url: security/zenoti-trust-center.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 13
+  pass: local-v1

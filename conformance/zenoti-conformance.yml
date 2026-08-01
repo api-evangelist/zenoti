@@ -1,0 +1,45 @@
+generated: '2026-07-21'
+method: derived
+source: Zenoti API docs (auth, pagination, rate-limits, errors, webhooks) at https://docs.zenoti.com
+assertions:
+- id: oauth2
+  conforms: false
+  evidence: Auth is API-key and opaque bearer tokens, not standard OAuth 2.0 flows.
+- id: oidc
+  conforms: false
+  evidence: No openid-configuration; no OpenID Connect.
+- id: rfc9457
+  conforms: false
+  evidence: Errors use a custom {code,message} envelope, not application/problem+json.
+- id: pagination
+  conforms: true
+  evidence: Page-number pagination (page/size, max size 100) with page_info response object.
+- id: rate-limiting
+  conforms: true
+  evidence: Documented 60/min limit with RateLimit-* headers, 429, Retry-After backoff.
+- id: idempotency
+  conforms: false
+  evidence: No idempotency-key mechanism documented.
+- id: webhooks
+  conforms: true
+  evidence: Signed webhook delivery with retry/backoff and structured event envelope.
+- id: fhir
+  conforms: false
+  evidence: Beauty/wellness domain API; not FHIR.
+- id: scim
+  conforms: false
+  evidence: No SCIM user provisioning surface.
+- id: odata
+  conforms: false
+  evidence: Custom REST, not OData.
+compliance_programs:
+- SOC 1
+- SOC 2
+- PCI DSS (Level 1)
+- ISO/IEC 27001:2022
+- HIPAA
+- GDPR
+- CCPA
+- HDS
+- NF525
+source_compliance: https://trust.zenoti.com/

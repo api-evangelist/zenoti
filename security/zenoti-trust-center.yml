@@ -1,0 +1,29 @@
+generated: '2026-07-21'
+method: searched
+probe: true
+source: https://trust.zenoti.com/
+url: https://trust.zenoti.com/
+certifications:
+- SOC 1
+- SOC 2
+- PCI DSS (Level 1)
+- ISO/IEC 27001:2022
+- HIPAA
+- CCPA
+- GDPR
+- HDS
+- JAWDA Data Certification
+- NF525
+- PHIPA
+- PIPEDA
+- Quebec Law 25
+- DPDPA
+- VPAT
+evidence:
+- source: https://trust.zenoti.com/
+  keywords:
+  - soc 2
+  - iso/iec 27001
+  - pci dss
+  - hipaa
+  - gdpr
