@@ -1,0 +1,32 @@
+# Front Door AI Index — zenoti — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: zenoti
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.zenoti.com
+  final_host: www.zenoti.com
+  ownership: own
+  owner: zenoti
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 43
+  host_score: 43
+  density: 26.81
+  words: 1604
+  tiers:
+    agentic: 8
+    core: 35
+    model: 0
+  ambiguous: 20
+  top_terms:
+    AI: 34
+    agent: 11
+    AI agent: 8
+    intelligence: 3
+    automation: 2
+    predictive: 2
+    smart: 2
+    ML: 1

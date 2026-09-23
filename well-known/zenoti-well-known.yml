@@ -18,7 +18,18 @@ probes:
   path: /.well-known/openid-configuration
   status: 401
   file: null
-notes: >-
-  Only the corporate host publishes a security.txt. Zenoti API auth is
-  API-key / opaque-bearer-token based (not OpenID Connect), so no
-  openid-configuration or oauth-authorization-server document is exposed.
+notes: Only the corporate host publishes a security.txt. Zenoti API auth is API-key / opaque-bearer-token
+  based (not OpenID Connect), so no openid-configuration or oauth-authorization-server document is exposed.
+hosts:
+- host: ''
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: zenoti-security.txt
+x-shape-fix:
+  converted: '2026-08-20'
+  from: probes
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent. Promoted ONLY the 2xx rows out of
+    the probe log; non-2xx probes are real negative results and were left in place, not converted into
+    documents.
