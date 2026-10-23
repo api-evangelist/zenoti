@@ -66,10 +66,30 @@ edges:
     detected: '2026-10-22'
   detected_by: sweep-openapi-directory-apis-guru.py
   first_seen: '2026-10-22'
+- partner_name: Xero (own)
+  partner: xero
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://apps.xero.com/nz/app/zenoti
+  mirror_of: xero/integrations/xero-integration-edges.yml
+  apps:
+  - Zenoti
+  listing_count: 1
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Point of sale
+  features:
+  - Sign Up with Xero
 method: searched
 checked:
 - https://zapier.com/api/v4/apps/
 - https://api.apis.guru/v2/list.json
 - https://api.apis.guru/v2/providers.json
+- xero/integrations/xero-integration-edges.yml
 source:
 - https://zapier.com/api/v4/apps/

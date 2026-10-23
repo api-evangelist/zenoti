@@ -70,3 +70,16 @@
     detected: '2026-10-22'
   status: not-a-workflow
   arazzo: null
+- slug: zenoti-xero-own
+  label: Xero (own)
+  partner: xero
+  partner_name: Xero (own)
+  category: Point of sale
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://apps.xero.com/nz/app/zenoti
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
