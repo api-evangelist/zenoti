@@ -64,6 +64,108 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Zenoti is a company surfaced as a portfolio company of accel and added to the API Evangelist network as a stub for enrichment. Sector: services. This profile is a lead awaiting the enrichment pipeline.
+Zenoti is an AI-powered, all-in-one cloud management platform for the beauty, wellness, and fitness industries, serving 30,000+ salons, spas, medspas, barbershops, and fitness centers across 50+ countries. It covers online booking, point of sale and payments, memberships, packages, gift cards, loyalty, marketing, staff scheduling, and business intelligence. Zenoti exposes a large REST API (~283 documented operations) with API-key and bearer-token authentication, signed webhooks, page-number pagination, and per-organization rate limiting, letting partners build custom booking, membership-sale, product-sale, gift-card, and CRM/opportunity workflows on top of the platform.
 
-Backed by: accel — http://www.zenoti.com
+**Areas:** Company · Services · Beauty · Wellness · Spa · Salon · Fitness · Booking · Payments · Software-as-a-Service
+
+## Zenoti on APIs.io
+
+Everything profiled for Zenoti is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/zenoti/](https://apis.io/providers/zenoti/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Zenoti API](https://apis.io/apis/zenoti/zenoti-api/) — REST API for the Zenoti beauty/wellness/fitness platform covering centers, appointments, guests, invoices and payments, memberships, packages, gift cards,…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Zenoti Webhooks](https://apis.io/asyncapis/zenoti/zenoti-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [zenoti-mcp.yml](https://apis.io/servers/zenoti/zenoti-mcp-yml/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Zenoti Authentication](https://apis.io/security/zenoti/zenoti-authentication/)
+- [Zenoti Domain Security](https://apis.io/security/zenoti/zenoti-domain-security/)
+- [Zenoti Trust Center](https://apis.io/security/zenoti/zenoti-trust-center/)
+- [Zenoti Vulnerability Disclosure](https://apis.io/security/zenoti/zenoti-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](http://www.zenoti.com)
+- [Documentation](https://docs.zenoti.com/)
+- [Getting started](https://docs.zenoti.com/docs/create-the-backend-app-and-generate-a-new-api-key.md)
+- [API reference](https://docs.zenoti.com/reference/generate-an-access-token)
+- [Pricing](https://www.zenoti.com/pricing-zenoti)
+- [Sign up](https://www.zenoti.com/book-a-demo)
+- [Support](https://help.zenoti.com)
+- [Blog](https://www.zenoti.com/blog)
+- [Status](https://status.zenoti.com/)
+
+## API Evangelist rating
+
+**Kin Score 40.1** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 39.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 42.1 |
+| Developer ergonomics | 41.7 |
+| Access clarity | 39.5 |
+
+**Agent readiness 22.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 25.0** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/zenoti/](https://apis.io/providers/zenoti/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Zenoti: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/zenoti/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
